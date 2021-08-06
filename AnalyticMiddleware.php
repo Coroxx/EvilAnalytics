@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Models\Call;
 use Route;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DeviceDetector\DeviceDetector;
 use Stevebauman\Location\Facades\Location;
@@ -26,13 +27,12 @@ class AnalyticMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
         // Get userAgent
 
         $user_agent = new DeviceDetector($request->header('User-Agent'));
         $user_agent->parse();
 
-        // Get country by IP 
+        // Get country by IP
 
         if ($position = Location::get()) {
             $country = $position->countryName;
@@ -50,6 +50,8 @@ class AnalyticMiddleware
                 'route' => Route::getCurrentRoute()->getName()
             ]);
         }
+
+
 
         return $next($request);
     }
