@@ -36,9 +36,7 @@ class AnalyticsController extends Controller
         $week_countries = [];
 
         $week_countries = $this->forarray($week_requests, $week_countries, 'country');
-
         $most_present_country = collect($week_countries)->filter()->countBy()->sortDesc()->keys();
-
 
         // Collecting the most present device 
 
