@@ -34,8 +34,18 @@ class AnalyticMiddleware
 
         // Get country by IP
 
-        if ($position = Location::get()) {
+        // Grabbing IP behind a possible cloudfare proxy
+
+        try {
+            $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
+        } catch (\Throwable $th) {
+            $ip = request()->ip();
+        }
+
+        if ($position = Location::get($ip)) {
             $country = $position->countryName;
+        } else {
+            $country = 'Unknow';
         }
 
         // Send data to the database
