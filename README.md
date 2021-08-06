@@ -6,6 +6,9 @@
 <strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.0 </strong>
 </div>
 
+- [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/test-readme#screen) 📷
+
+
 ## Documentation language
 
 - [French](https://github.com/Coroxx/test-readme#fr) 🇫🇷
@@ -174,5 +177,20 @@ php artisan migrate
 ## Attention 🚨 
 
 <strong> N'oubliez pas de nommer toutes vos routes, sinon vous n'aurez pas de suivi précis sur le nombre de visite de chaque pages </strong>
+
+</div>
+  
+  
+<br>
+<br>
+<br>
+
+<div id="screen">
+
+# Screenshots / Captures d'écran
+
+![code](https://i.ibb.co/tJG81T9/image.png)
+![code](https://i.ibb.co/D5nwRY2/image.png)
+![code](https://i.ibb.co/pnbfSFx/image.png)
 
 </div>
