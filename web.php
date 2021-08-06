@@ -14,11 +14,13 @@ use GuzzleHttp\Middleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/analytics', 'AnalyticsController@index')->name('analytics');
 
 
 Route::middleware([AnalyticMiddleware::class])->group(function () {
-    Route::get('/analytics', 'AnalyticsController@index')->name('analytics');
-
+    
+    // Your routes here //
+    
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
