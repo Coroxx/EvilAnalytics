@@ -6,13 +6,13 @@
 <strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.0 </strong>
 </div>
 
-- [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/test-readme#screen) 📷
+- [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/EvilAnalytics#screen) 📷
 
 
 ## Documentation language
 
-- [French](https://github.com/Coroxx/test-readme#fr) 🇫🇷
-- [English](https://github.com/Coroxx/test-readme#ang) 🇬🇧
+- [French](https://github.com/Coroxx/EvilAnalytics#fr) 🇫🇷
+- [English](https://github.com/Coroxx/EvilAnalytics#ang) 🇬🇧
 
 <div>
 <strong>
