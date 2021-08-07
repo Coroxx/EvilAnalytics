@@ -14,7 +14,8 @@ use GuzzleHttp\Middleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/analytics', 'AnalyticsController@index')->name('analytics');
+Route::get('/analytics/{lang}', 'AnalyticsController@index')->name('analytics');
+Route::get('/analytics', 'AnalyticsController@indexLang')->name('analytics.index');
 
 
 Route::middleware([AnalyticMiddleware::class])->group(function () {
