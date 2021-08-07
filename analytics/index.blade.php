@@ -319,7 +319,7 @@ use App\Models\Call;
                                             "{{ isset($month_routes[0]) ? ucfirst($month_routes[0]) : 'NaN' }}",
                                         ],
                                         "datasets": [{
-                                            "label": "  {{ __('dashboard.index') }}",
+                                            "label": "  {{ __('dashboard.requests') }}",
                                             "data": [
                                                 "{{ isset($month_routes[4]) ? $week_requests->where('route', $month_routes[4])->count() : 0 }}",
                                                 "{{ isset($month_routes[2]) ? $week_requests->where('route', $month_routes[2])->count() : 0 }}",
