@@ -56,9 +56,20 @@ use App\Models\Call;
                     <span class="font-extrabold text-red-600">EvilAnalytics</span>
                 </a>
                 <p class="text-sm font-bold text-white"><a class="hover:underline"
-                        href="https://github.com/Coroxx/EvilAnalytics" target="_blank">Github - Version 1.0</a>
+                        href="https://github.com/Coroxx/EvilAnalytics" rel="noreferrer" target=" _blank">Github -
+                        Version
+                        1.2</a>
                 </p>
             </div>
+            <div id="lang" class="w-full text-center md:w-auto md:absolute md:text-left md:m-0 top-4 right-4">
+                <div>
+                    <a href="{{ route('analytics', 'en') }}">
+                        <img src="{{ asset('assets/ang.png') }}" class="inline w-6 h-6" alt="emoji_ang"> </a>
+                    <a href="{{ route('analytics', 'fr') }}"> <img src="{{ asset('assets/france.png') }}"
+                            class="inline w-6 h-6" alt="emoji_fr"> </a>
+                </div>
+            </div>
+
             <div class="w-1/2 pr-0">
             </div>
 
@@ -70,7 +81,7 @@ use App\Models\Call;
                         <a href="#"
                             class="block py-1 pl-1 text-red-500 no-underline align-middle border-b-2 border-red-500 md:py-3 hover:text-red-600 hover:border-red-500">
                             <i class="mr-3 text-red-500 fas fa-home fa-fw"></i><span
-                                class="pb-1 text-sm md:pb-0">Home</span>
+                                class="pb-1 text-sm md:pb-0">{{ __('dashboard.home') }}</span>
                         </a>
                     </li>
                 </ul>
@@ -98,7 +109,7 @@ use App\Models\Call;
                                     </svg></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold text-red-500 uppercase">Total Requests today</h5>
+                                <h5 class="font-bold text-red-500 uppercase">{{ __('dashboard.today_requests') }}</h5>
                                 <h3 class="text-3xl font-bold text-white">{{ $today_requests }} <span
                                         class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
@@ -118,7 +129,8 @@ use App\Models\Call;
                                     </svg></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="-mt-1 font-bold text-red-500 uppercase">Most present country this week</h5>
+                                <h5 class="-mt-1 font-bold text-red-500 uppercase">{{ __('dashboard.week_country') }}
+                                </h5>
                                 <h3 class="mt-1 text-2xl font-bold text-white">{{ $most_present_country->first() }}
                                 </h3>
                             </div>
@@ -139,12 +151,13 @@ use App\Models\Call;
                                 </div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="-mt-1 font-bold text-red-500 uppercase">Most visited URL of the month</h5>
+                                <h5 class="-mt-1 font-bold text-red-500 uppercase">{{ __('dashboard.month_url') }}
+                                </h5>
                                 <h3 class="mt-1 text-2xl font-bold text-white">@php
                                     try {
                                         preg_match('/\/([a-z0-9_-]*[\/]?)$/', route("$most_visited_route"), $match);
                                     } catch (\Throwable $th) {
-                                        $match = ['No route defined'];
+                                        $match = [__('dashboard.no_route')];
                                     }
                                 @endphp
                                     {{ $match ? $match[0] : '/' }}
@@ -168,7 +181,7 @@ use App\Models\Call;
                                 </div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold text-red-500 uppercase">Unique users today</h5>
+                                <h5 class="font-bold text-red-500 uppercase">{{ __('dashboard.today_users') }}</h5>
                                 <h3 class="text-3xl font-bold text-white">{{ $unique_users_today }} <span
                                         class="text-red-500"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
@@ -189,7 +202,7 @@ use App\Models\Call;
                                 </div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold text-red-500 uppercase">Most present device this week</h5>
+                                <h5 class="font-bold text-red-500 uppercase">{{ __('dashboard.week_device') }}</h5>
                                 <h3 class="text-2xl font-bold text-white">
                                     {{ ucfirst($most_present_device->first()) }}</h3>
                             </div>
@@ -210,7 +223,7 @@ use App\Models\Call;
                                 </div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold text-red-500 uppercase">Unique users this month</h5>
+                                <h5 class="font-bold text-red-500 uppercase">{{ __('dashboard.month_users') }}</h5>
                                 <h3 class="mt-1 text-2xl font-bold text-white">{{ $unique_users_week }}
                                 </h3>
                             </div>
@@ -229,7 +242,8 @@ use App\Models\Call;
                     <!--Graph Card-->
                     <div class="border border-gray-800 rounded shadow bg-main">
                         <div class="p-3 border-b border-gray-800">
-                            <h5 class="font-extrabold uppercase" style="color: #4bc0c0">UNIQUE VISITORS & REQUESTS</h5>
+                            <h5 class="font-extrabold uppercase" style="color: #4bc0c0">
+                                {{ __('dashboard.uniques_visitors_requests') }}</h5>
                         </div>
                         <div class="p-5 h-80">
                             <canvas id="chartjs-7" class="chartjs" width="undefined" height="undefined"></canvas>
@@ -238,11 +252,11 @@ use App\Models\Call;
                                     "type": "bar",
                                     "data": {
                                         "labels": ["{{ now()->subDays(3)->format('d/m') }}", "{{ now()->subDays(2)->format('d/m') }}",
-                                            "Yesterday", "Today"
+                                            "{{ __('dashboard.yesterday') }}", "{{ __('dashboard.today') }}"
                                         ],
                                         "datasets": [{
 
-                                                "label": "   UNIQUE VISITORS      ",
+                                                "label": "   {{ __('dashboard.uniques_visitors') }}      ",
                                                 "data": [
                                                     "{{ Call::whereDate('created_at', Carbon::today()->subDays(3))->distinct('session_id')->count() }}",
                                                     "{{ Call::whereDate('created_at', Carbon::today()->subDays(2))->distinct('session_id')->count() }}",
@@ -254,7 +268,7 @@ use App\Models\Call;
                                                 "borderColor": "rgb(75, 192, 192)",
                                             },
                                             {
-                                                "label": "   REQUESTS",
+                                                "label": "   {{ __('dashboard.requests') }}",
                                                 "data": [
                                                     "{{ Call::whereDate('created_at', Carbon::today()->subDays(3))->count() }}",
                                                     "{{ Call::whereDate('created_at', Carbon::today()->subDays(2))->count() }}",
@@ -289,7 +303,8 @@ use App\Models\Call;
                     <!--Graph Card-->
                     <div class="border border-gray-800 rounded shadow bg-main">
                         <div class="p-3 border-b border-gray-800">
-                            <h5 class="font-extrabold uppercase" style="color: #4bc0c0">MOST USED ROUTES (Last 7 days)
+                            <h5 class="font-extrabold uppercase" style="color: #4bc0c0">
+                                {{ __('dashboard.most_used_routes') }}
                             </h5>
                         </div>
                         <div class="p-5 h-80">
@@ -304,7 +319,7 @@ use App\Models\Call;
                                             "{{ isset($month_routes[0]) ? ucfirst($month_routes[0]) : 'NaN' }}",
                                         ],
                                         "datasets": [{
-                                            "label": "  REQUESTS",
+                                            "label": "  {{ __('dashboard.index') }}",
                                             "data": [
                                                 "{{ isset($month_routes[4]) ? $week_requests->where('route', $month_routes[4])->count() : 0 }}",
                                                 "{{ isset($month_routes[2]) ? $week_requests->where('route', $month_routes[2])->count() : 0 }}",
@@ -339,7 +354,8 @@ use App\Models\Call;
                     <!--Graph Card-->
                     <div class="border border-gray-800 rounded shadow bg-main">
                         <div class="p-3 border-b border-gray-800">
-                            <h5 class="font-bold uppercase" style="color:#ff6384">MOST USED DEVICES (Last 7 days)</h5>
+                            <h5 class="font-bold uppercase" style="color:#ff6384">
+                                {{ __('dashboard.most_used_devices') }}</h5>
                         </div>
                         <div class="p-5 h-80">
                             <canvas id="chartjs-4" class="chartjs" width="undefined" height="undefined"></canvas>
@@ -352,7 +368,7 @@ use App\Models\Call;
                                             "{{ isset($most_present_device[2]) ? ucfirst($most_present_device[2]) : 'NaN' }}"
                                         ],
                                         "datasets": [{
-                                            "label": "Issues",
+                                            "label": "Devices",
                                             "data": [
                                                 "{{ isset($most_present_device[0]) ? $week_requests->where('device', $most_present_device[0])->count() : 'NaN' }}",
                                                 "{{ isset($most_present_device[1]) ? $week_requests->where('device', $most_present_device[1])->count() : 'NaN' }}",
@@ -376,7 +392,8 @@ use App\Models\Call;
                     <!--Graph Card-->
                     <div class="border border-gray-800 rounded shadow bg-main">
                         <div class="p-3 border-b border-gray-800">
-                            <h5 class="font-bold uppercase" style="color:#ff6384">COUNTRIES (LAST 7 DAYS)</h5>
+                            <h5 class="font-bold uppercase" style="color:#ff6384">
+                                {{ __('dashboard.most_present_countries') }}</h5>
                         </div>
                         <div class="p-5 h-80">
                             <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
@@ -391,7 +408,7 @@ use App\Models\Call;
                                         ],
                                         "datasets": [{
 
-                                            "label": "   REQUESTS",
+                                            "label": "   {{ __('dashboard.requests') }}",
                                             "data": [
                                                 "{{ isset($most_present_country[3]) ? $week_requests->where('country', $most_present_country[3])->count() : 'NaN' }}",
                                                 "{{ isset($most_present_country[2]) ? $week_requests->where('country', $most_present_country[2])->count() : 'NaN' }}",
@@ -449,14 +466,14 @@ use App\Models\Call;
                         <div class="px-8">
                             <h3 class="font-bold text-gray-100">EvilAnalytics</h3>
                             <p class="py-4 text-sm text-gray-600">
-                                A powerfull and elegant Google Analytics alternative who respects your privacy
+                                {{ __('dashboard.footer_bio') }}
                             </p>
                         </div>
                     </div>
 
                     <div class="flex w-full md:w-1/2">
                         <div class="px-8">
-                            <h3 class="font-bold text-gray-100">Made with ❤️ by Coroxx</h3>
+                            <h3 class="font-bold text-gray-100">{{ __('dashboard.footer_bio2') }}</h3>
                         </div>
                     </div>
                 </div>
