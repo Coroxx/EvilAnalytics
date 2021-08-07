@@ -3,7 +3,7 @@
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/vampire_light-skin-tone_1f9db-1f3fb_1f3fb.png" width="75"> <h1> EvilAnalytics </h1>
 
   
-<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.0 </strong>
+<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.2 </strong>
 </div>
 
 - [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/EvilAnalytics#screen) 📷
@@ -45,6 +45,8 @@ No tracking data are redirected to external servers, you are the only master of 
  - Add   "Call.php" in your <strong>App/Models</strong>folder
 
  - Add   "2021_08_04_191933_create_calls_table.php" in your  <strong> database/migrations </strong>  folder
+
+  - Add "lang" folder content to your <strong> resources/lang </strong> folder
 
  - Add "analytics" folder to your <strong> resources/views </strong> folder
 
@@ -91,7 +93,7 @@ php artisan migrate
 <div align="middle">
 <br>
 
-![code](https://i.ibb.co/SPHp13S/image.png)
+![code](https://i.ibb.co/Gs5Vwys/image.png)
 
 </div>
 
@@ -101,8 +103,10 @@ php artisan migrate
 
 ## Caution 🚨 
 
-<strong> Don't forget to name all your routes, otherwise you won't have an accurate tracking of the number of visits of each page </strong>
-
+<strong> Don't forget to name all your routes, otherwise you won't have an accurate tracking of the number of visits of each page
+<br><br>
+Don't forget that as such, the panel is accessible by everyone, so don't hesitate to set up a login system to access it
+</strong> 
 </div>
 
 <br>
@@ -121,6 +125,8 @@ php artisan migrate
  - Ajouter   "Call.php" dans votre dossier <strong>App/Models</strong>
 
  - Ajouter   "2021_08_04_191933_create_calls_table.php" dans votre dossier   <strong> database/migrations </strong>
+
+ - Ajouter le contenu du dossier "lang" dans votre dossier <strong> resources/lang </strong>
 
  - Ajouter votre dossier "analytics" dans votre dossier <strong> resources/views </strong>
 
@@ -167,7 +173,7 @@ php artisan migrate
 <div align="middle">
 <br>
 
-![code](https://i.ibb.co/qJVNjYC/image.png)
+![code](https://i.ibb.co/6tN5r7r/image.png)
 
 </div>
 
@@ -176,7 +182,10 @@ php artisan migrate
 <br><br>
 ## Attention 🚨 
 
-<strong> N'oubliez pas de nommer toutes vos routes, sinon vous n'aurez pas de suivi précis sur le nombre de visite de chaque pages </strong>
+<strong> N'oubliez pas de nommer toutes vos routes, sinon vous n'aurez pas de suivi précis sur le nombre de visite de chaque pages
+<br><br>
+N'oubliez pas que comme tel, le panel est accessible par tout le monde, n'hésitez pas à mettre en place à un sytème de login pour y accéder
+</strong>
 
 </div>
   
