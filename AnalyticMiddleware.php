@@ -53,7 +53,7 @@ class AnalyticMiddleware
         if (!$user_agent->isBot()) {
             Call::create([
                 'user_agent' => $request->header('User-Agent'),
-                'ip' => request()->ip(),
+                'ip' => $ip,
                 'session_id' => session()->getId(),
                 'country' => $country,
                 'device' => $user_agent->getDeviceName(),
