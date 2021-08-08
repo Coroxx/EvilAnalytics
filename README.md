@@ -1,5 +1,6 @@
 
-<div align="center">  
+<div align="center">
+  <h1> Do not install EvilAnalytics for this time, i'm currently working on a composer packagist to make installation easier ! See you soon 👋  </h1>
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/vampire_light-skin-tone_1f9db-1f3fb_1f3fb.png" width="75"> <h1> EvilAnalytics </h1>
 
   
