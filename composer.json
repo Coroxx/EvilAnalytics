@@ -1,0 +1,16 @@
+{
+    "name": "coroxx/evilanalytics",
+    "description": "A powerful and opensource analytics tool for your Laravel applications",
+    "type": "library",
+    "require": {
+        "matomo/device-detector": "dev-master",
+        "stevebauman/location": "dev-master"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "coroxx\\evilanalytics\\": "src/"
+        }
+    }
+}
