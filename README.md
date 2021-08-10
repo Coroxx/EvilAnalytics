@@ -3,7 +3,7 @@
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/vampire_light-skin-tone_1f9db-1f3fb_1f3fb.png" width="75"> <h1> EvilAnalytics </h1>
 
   
-<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.3.1 </strong>
+<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.3.2 </strong>
 </div>
 
 - [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/EvilAnalytics#screen) 📷
@@ -44,7 +44,7 @@ No tracking data are redirected to external servers, you are the only master of 
 <i> Install EvilAnalytics is pretty easy ! </i> 😎
 
 ````
-php artisan require coroxx/evilanalytics
+composer require coroxx/evilanalytics
 
 php artisan vendor:publish --provider="coroxx\evilanalytics\EvilanalyticsServiceProvider"
 
@@ -97,7 +97,7 @@ For this, modify /vendor/coroxx/evilanalytics/src/routes/web.php
 <i> Installer EvilAnalytics est plutôt simple ! </i> 😎
 
  ````
-php artisan require coroxx/evilanalytics
+composer require coroxx/evilanalytics
 
 php artisan vendor:publish --provider="coroxx\evilanalytics\EvilanalyticsServiceProvider"
 
