@@ -49,18 +49,18 @@ class AnalyticMiddleware
 
         // Send data to the database
 
-        if (!$user_agent->isBot()) {
-            Call::create([
-                'user_agent' => $request->header('User-Agent'),
-                'ip' =>  $ip,
-                'session_id' => session()->getId(),
-                'country' => $country,
-                'device' => $user_agent->getDeviceName(),
-                'route' => Route::getCurrentRoute()->getName()
-            ]);
+         if (Route::getCurrentRoute()->getName() && $user_agent->getDeviceName()) {
+            if (!$user_agent->isBot()) {
+                Call::create([
+                    'user_agent' => $request->header('User-Agent'),
+                    'ip' => $ip,
+                    'session_id' => session()->getId(),
+                    'country' => $country,
+                    'device' => $user_agent->getDeviceName(),
+                    'route' => Route::getCurrentRoute()->getName()
+                ]);
+            }
         }
-
-
 
         return $next($request);
     }
