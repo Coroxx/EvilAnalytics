@@ -411,19 +411,21 @@ use coroxx\evilanalytics\Models\Call;
                                 new Chart(document.getElementById("chartjs-1"), {
                                     "type": "bar",
                                     "data": {
-                                        "labels": ["{{ isset($most_present_country[3]) ? ucfirst($most_present_country[3]) : 'NaN' }}",
-                                            "{{ isset($most_present_country[2]) ? ucfirst($most_present_country[2]) : 'NaN' }}",
-                                            "{{ isset($most_present_country[1]) ? ucfirst($most_present_country[1]) : 'NaN' }}",
-                                            "{{ isset($most_present_country[0]) ? ucfirst($most_present_country[0]) : 'NaN' }}",
+                                        "labels": [
+                                            "{{ isset($most_present_countries[3]) ? ucfirst($most_present_countries[3]) : 'NaN' }}",
+                                            "{{ isset($most_present_countries[2]) ? ucfirst($most_present_countries[2]) : 'NaN' }}",
+                                            "{{ isset($most_present_countries[1]) ? ucfirst($most_present_countries[1]) : 'NaN' }}",
+                                            "{{ isset($most_present_countries[0]) ? ucfirst($most_present_countries[0]) : 'NaN' }}",
                                         ],
                                         "datasets": [{
 
-                                            "label": "   {{ __('evilanalytics::dashboard.requests') }}",
+                                            "label": "   {{ __('dashboard.requests') }}",
                                             "data": [
-                                                "{{ isset($most_present_country[3]) ? $week_requests->where('country', $most_present_country[3])->count() : 'NaN' }}",
-                                                "{{ isset($most_present_country[2]) ? $week_requests->where('country', $most_present_country[2])->count() : 'NaN' }}",
-                                                "{{ isset($most_present_country[1]) ? $week_requests->where('country', $most_present_country[1])->count() : 'NaN' }}",
-                                                "{{ isset($most_present_country[0]) ? $week_requests->where('country', $most_present_country[0])->count() : 'NaN' }}",
+                                                `{{ isset($most_present_countries[3]) ? $unique_ip_week->where('country', $most_present_countries[3])->count() : 'NaN' }}`,
+                                                "{{ isset($most_present_countries[2]) ? $unique_ip_week->where('country', $most_present_countries[2])->count() : 'NaN' }}",
+                                                "{{ isset($most_present_countries[1]) ? $unique_ip_week->where('country', $most_present_countries[1])->count() : 'NaN' }}",
+                                                "{{ isset($most_present_countries[0]) ? $unique_ip_week->where('country', $most_present_countries[0])->count() : 'NaN' }}",
+
                                             ],
 
                                             "borderColor": "rgb(255, 99, 132)",
