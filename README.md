@@ -72,6 +72,8 @@ php artisan migrate
 
 ### Good work! 👍
 
+Now acces to the dashboard with /analytics/en ✅
+
 <br>
 
 ## Caution 🚨 
@@ -121,6 +123,8 @@ php artisan migrate
 </div>
 
 ### Bon travail chef ! 👍
+
+Maintenant accédez au panel avec l'url /analytics/fr ✅
 
 <br><br>
 ## Attention 🚨 
