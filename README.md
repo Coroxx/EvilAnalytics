@@ -1,10 +1,9 @@
 
 <div align="center">
-  <h1> Do not install EvilAnalytics for this time, i'm currently working on a composer packagist to make installation easier ! See you soon 👋  </h1>
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/vampire_light-skin-tone_1f9db-1f3fb_1f3fb.png" width="75"> <h1> EvilAnalytics </h1>
 
   
-<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.2 </strong>
+<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.3.1 </strong>
 </div>
 
 - [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/EvilAnalytics#screen) 📷
@@ -25,6 +24,11 @@ No tracking data are redirected to external servers, you are the only master of 
 
 </strong>
 
+
+### Changelog : V1.2  🇫🇷-🇬🇧
+
+<i> The dashboard is now available in French 🇫🇷 and English 🇬🇧 languages </i>
+
 </div>
 
 <br>
@@ -39,46 +43,14 @@ No tracking data are redirected to external servers, you are the only master of 
 
 <i> Install EvilAnalytics is pretty easy ! </i> 😎
 
- - Add   "AnalyticMiddleware.php" in your <strong>App/Http/Middleware</strong> folder
+````
+php artisan require coroxx/evilanalytics
 
- - Add   "AnalyticsController.php" in your <strong>App/Http/Controllers</strong> folder
+php artisan vendor:publish --provider="coroxx\evilanalytics\EvilanalyticsServiceProvider"
 
- - Add   "Call.php" in your <strong>App/Models</strong>folder
-
- - Add   "2021_08_04_191933_create_calls_table.php" in your  <strong> database/migrations </strong>  folder
-
-  - Add "lang" folder content to your <strong> resources/lang </strong> folder
-
- - Add "analytics" folder to your <strong> resources/views </strong> folder
-
- - Then to finish add the "assets" folder in your <strong>public</strong> folder
-
-
-Download dependencies ➕
-```
-composer require matomo/device-detector
-composer require stevebauman/location
 php artisan vendor:publish --provider="Stevebauman\Location\LocationServiceProvider"
-```
 
-
-⚠️ Views are based on TailWindCSS Framework, if you don't have it : 
-```
-https://tailwindcss.com/docs/guides/laravel
-```
-
-<strong> If you're using Bootstrap or other CSS Framework, you can replace the 
-```
-<link rel="stylesheet" href="{{mix('css/app.css')}}">
-```
- </strong> By <strong>
-```
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-```
-
-in the <head\> of index.blade.php
-
- </strong>
+````
 
 
 > ## You have almost finished your installation 😇
@@ -94,7 +66,7 @@ php artisan migrate
 <div align="middle">
 <br>
 
-![code](https://i.ibb.co/Gs5Vwys/image.png)
+![code](https://i.ibb.co/Qd37WBN/image.png)
 
 </div>
 
@@ -106,7 +78,10 @@ php artisan migrate
 
 <strong> Don't forget to name all your routes, otherwise you won't have an accurate tracking of the number of visits of each page
 <br><br>
-Don't forget that as such, the panel is accessible by everyone, so don't hesitate to set up a login system to access it
+Don't forget that as such, the panel is accessible by everyone, so don't hesitate to set up a login system to access it :
+
+For this, modify /vendor/coroxx/evilanalytics/src/routes/web.php 
+
 </strong> 
 </div>
 
@@ -119,47 +94,14 @@ Don't forget that as such, the panel is accessible by everyone, so don't hesitat
 
 <i> Installer EvilAnalytics est plutôt simple ! </i> 😎
 
- - Ajouter   "AnalyticMiddleware.php" dans votre dossier <strong>App/Http/Middleware</strong>
+ ````
+php artisan require coroxx/evilanalytics
 
- - Ajouter   "AnalyticsController.php" dans votre dossier <strong>App/Http/Controllers</strong> 
+php artisan vendor:publish --provider="coroxx\evilanalytics\EvilanalyticsServiceProvider"
 
- - Ajouter   "Call.php" dans votre dossier <strong>App/Models</strong>
-
- - Ajouter   "2021_08_04_191933_create_calls_table.php" dans votre dossier   <strong> database/migrations </strong>
-
- - Ajouter le contenu du dossier "lang" dans votre dossier <strong> resources/lang </strong>
-
- - Ajouter votre dossier "analytics" dans votre dossier <strong> resources/views </strong>
-
- - Et pour finir ajoutez votre dossier "assets" dans votre dossier <strong>public</strong>
-
-
-Installer les dépendances ➕
-```
-composer require matomo/device-detector
-composer require stevebauman/location
 php artisan vendor:publish --provider="Stevebauman\Location\LocationServiceProvider"
-```
 
-
-⚠️ Les vues sont réalisées à l'aide du framework CSS Tailwind, si vous souhaitez l'installer : 
-```
-https://tailwindcss.com/docs/guides/laravel
-```
-
-<strong> Si vous utilisez déjà un autre framework CSS comme Bootstrap ou autre, remplacez la ligne  
-```
-<link rel="stylesheet" href="{{mix('css/app.css')}}">
-```
- </strong> Par <strong>
-```
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-```
-
-dans le <head\> du fichier index.blade.php
-
- </strong>
-
+````
 
 > ## Vous touchez à la fin de l'installation 😇
 <br> <br>
@@ -174,7 +116,7 @@ php artisan migrate
 <div align="middle">
 <br>
 
-![code](https://i.ibb.co/6tN5r7r/image.png)
+![code](https://i.ibb.co/VpD8GvW/image.png)
 
 </div>
 
@@ -186,6 +128,8 @@ php artisan migrate
 <strong> N'oubliez pas de nommer toutes vos routes, sinon vous n'aurez pas de suivi précis sur le nombre de visite de chaque pages
 <br><br>
 N'oubliez pas que comme tel, le panel est accessible par tout le monde, n'hésitez pas à mettre en place à un sytème de login pour y accéder
+
+Pour cela, il faut modifier les routes /vendor/coroxx/evilanalytics/src/routes/web.php
 </strong>
 
 </div>
