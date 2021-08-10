@@ -39,6 +39,8 @@ class AnalyticsController extends Controller
 
         $unique_users_today = Call::whereDate('created_at', Carbon::today())->distinct('session_id')->count();
         $unique_users_week = Call::whereDate('created_at', '>=', now()->subWeek(1))->distinct('session_id')->count();
+        $unique_ip_week = Call::whereDate('created_at', '>=', now()->subWeek(1))->get()->unique('ip');
+
 
         // Get requests by date 
 
@@ -51,8 +53,8 @@ class AnalyticsController extends Controller
 
         $week_countries = [];
 
-        $week_countries = $this->forarray($week_requests, $week_countries, 'country');
-        $most_present_country = collect($week_countries)->filter()->countBy()->sortDesc()->keys();
+        $week_countries = $this->forarray($unique_ip_week, $week_countries, 'country');
+        $most_present_countries = collect($week_countries)->filter()->countBy()->sortDesc()->keys();
 
         // Collecting the most present device 
 
@@ -79,6 +81,6 @@ class AnalyticsController extends Controller
 
 
 
-        return view('evilanalytics::index', compact('unique_users_today', 'today_requests', 'unique_users_week', 'month_routes', 'most_present_device', 'most_present_country', 'week_requests', 'most_visited_route', 'no_visited_route'));
+        return view('evilanalytics::index', compact('unique_users_today','unique_ip_week','today_requests', 'unique_users_week', 'month_routes', 'most_present_device', 'most_present_country', 'week_requests', 'most_visited_route', 'no_visited_route'));
     }
 }
