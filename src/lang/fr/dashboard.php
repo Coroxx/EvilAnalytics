@@ -19,6 +19,7 @@ return [
     'most_used_devices' => 'APPAREILS LES PLUS UTILISÉS (7 DERNIERS JOURS)',
     'most_present_countries' => 'PAYS (7 DERNIERS JOURS)',
     'footer_bio' => 'Une alternative élégante, puissantes à GoogleAnalytics qui respecte votre vie privée',
-    'footer_bio2' => 'Fait avec le ❤️ par Coroxx'
+    'footer_bio2' => 'Fait avec le ❤️ par Coroxx',
+    'different_ip' => 'IP différentes'
 
 ];
