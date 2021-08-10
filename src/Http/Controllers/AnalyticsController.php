@@ -81,6 +81,6 @@ class AnalyticsController extends Controller
 
 
 
-        return view('evilanalytics::index', compact('unique_users_today','unique_ip_week','today_requests', 'unique_users_week', 'month_routes', 'most_present_device', 'most_present_country', 'week_requests', 'most_visited_route', 'no_visited_route'));
+        return view('evilanalytics::index', compact('unique_users_today','unique_ip_week','today_requests', 'unique_users_week', 'month_routes', 'most_present_device', 'most_present_countries', 'week_requests', 'most_visited_route', 'no_visited_route'));
     }
 }
