@@ -59,7 +59,7 @@ use coroxx\evilanalytics\Models\Call;
                 <p class="text-sm font-bold text-white"><a class="hover:underline"
                         href="https://github.com/Coroxx/EvilAnalytics" rel="noreferrer" target=" _blank">Github -
                         Version
-                        1.3</a>
+                        1.3.2</a>
                 </p>
             </div>
             <div id="lang" class="w-full text-center md:w-auto md:absolute md:text-left md:m-0 top-4 right-4">
