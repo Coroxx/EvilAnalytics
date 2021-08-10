@@ -59,7 +59,7 @@ use coroxx\evilanalytics\Models\Call;
                 <p class="text-sm font-bold text-white"><a class="hover:underline"
                         href="https://github.com/Coroxx/EvilAnalytics" rel="noreferrer" target=" _blank">Github -
                         Version
-                        1.3.2</a>
+                        1.3.2.5</a>
                 </p>
             </div>
             <div id="lang" class="w-full text-center md:w-auto md:absolute md:text-left md:m-0 top-4 right-4">
@@ -137,7 +137,7 @@ use coroxx\evilanalytics\Models\Call;
                                 <h5 class="-mt-1 font-bold text-red-500 uppercase">
                                     {{ __('evilanalytics::dashboard.week_country') }}
                                 </h5>
-                                <h3 class="mt-1 text-2xl font-bold text-white">{{ $most_present_country->first() }}
+                                <h3 class="mt-1 text-2xl font-bold text-white">{{ $most_present_countries->first() }}
                                 </h3>
                             </div>
                         </div>
