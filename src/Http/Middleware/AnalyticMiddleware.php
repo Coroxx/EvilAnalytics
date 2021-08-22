@@ -41,11 +41,8 @@ class AnalyticMiddleware
             $ip = request()->ip();
         }
 
-        if ($position = Location::get($ip)) {
-            $country = $position->countryName;
-        } else {
-            $country = 'Unknow';
-        }
+        Location::get($ip) ? $country = Location::get($ip)->countryName :  $country = 'Unknown';
+
 
         // Send data to the database
 
