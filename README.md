@@ -3,7 +3,7 @@
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/vampire_light-skin-tone_1f9db-1f3fb_1f3fb.png" width="75"> <h1> EvilAnalytics </h1>
 
   
-<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.3.2 </strong>
+<strong> Track devices, countries, requests, routes and many other with EvilAnalytics ! Version 1.4 </strong>
 </div>
 
 - [Screenshots of the dashboard (Captures d'écrans du panel)](https://github.com/Coroxx/EvilAnalytics#screen) 📷
@@ -20,10 +20,16 @@
 <br>
 
 ### 🔒 Privacy
-No tracking data are redirected to external servers, you are the only master of your data!
+You are the master of your data, all analytical data are stored in your database.
 
 </strong>
 
+### Changelog : V1.4 🤖
+
+<i> Analytical data is now much more accurate ! </i>
+
+<br>
+<br>
 
 ### Changelog : V1.2  🇫🇷-🇬🇧
 
@@ -52,6 +58,22 @@ php artisan vendor:publish --provider="Stevebauman\Location\LocationServiceProvi
 
 ````
 
+<strong> To significantly increase the accuracy of the analytical data you should include in your App/Console/Kernel.php file this function in the : 
+
+```protected function schedule(Schedule $schedule)``` </strong>
+
+
+![code](https://i.ibb.co/87FwcnN/image.png)
+
+<strong> (See the Kernel.php file at the root) </strong>
+
+### Then run the task <strong>every hour</strong> on your server  
+
+```` php artisan schedule:run ````
+
+### This will eliminate a large part of the bots every hour
+
+<br>
 
 > ## You have almost finished your installation 😇
 <br> <br>
@@ -104,6 +126,23 @@ php artisan vendor:publish --provider="coroxx\evilanalytics\EvilanalyticsService
 php artisan vendor:publish --provider="Stevebauman\Location\LocationServiceProvider"
 
 ````
+
+<strong> Pour augmenter nettement la précision des données analytiques vous devez inclure dans votre fichier App/Console/Kernel.php cette fonction dans la fonction  : 
+
+```protected function schedule(Schedule $schedule)``` </strong>
+
+
+![code](https://i.ibb.co/87FwcnN/image.png)
+
+<strong> (Voir le fichier Kernel.php à la racine) </strong>
+
+### Puis exécuter la tâche <strong> toutes les heures </strong> sur votre serveur  
+```` php artisan schedule:run ````
+
+### Ce qui va éliminer une grande partie des bots toutes les heures
+
+<br>
+
 
 > ## Vous touchez à la fin de l'installation 😇
 <br> <br>
