@@ -5,6 +5,7 @@ namespace coroxx\evilanalytics;
 use coroxx\evilanalytics\Models\Call;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Http;
 
 class Kernel extends ConsoleKernel
 {
