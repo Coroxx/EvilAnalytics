@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
             foreach ($data as $object) {
                 $provider = json_decode(Http::withUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15')->get("https://rdap.arin.net/registry/ip/$object->ip")->body())->name;
                 if (preg_match(
-                    '(microsoft|ovh|DIGITALOCEAN|AMAZO-ZPDX|MSFT|qwant|liquidweb|VIAWEST-BLK|GOOGL|SHINJIRU|CDN77|EONSCOPE|EstNOC-Malaysia|CONTABO|AMAZON|ALICLOUD|Baidu|UK2-INFRA|Dream|GoDaddy|Hetzner|Linode|Facebook|Opera|Zscaler|Nokia|Kaspersky)i',
+                    '(microsoft|ovh|DIGITALOCEAN|AMAZO-ZPDX|MSFT|qwant|TencentCloud|Unicom|liquidweb|VIAWEST-BLK|GOOGL|SHINJIRU|CDN77|EONSCOPE|EstNOC-Malaysia|CONTABO|AMAZON|ALICLOUD|Baidu|UK2-INFRA|Dream|GoDaddy|Hetzner|Linode|Facebook|Opera|Zscaler|Nokia|Kaspersky)i',
                     $provider
                 ) === 1) {
                     $object->delete();
